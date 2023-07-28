@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name" translatable="false">TPandroid</string>
+    <string name="txt_first">Introduzca primer texto</string>
+    <string name="txt_second">Introduzca segundo texto</string>
+    <string name="btn_cmp">Comparar</string>
+    <string name="txt_result_ok">Ambos textos coinciden!</string>
+    <string name="txt_result_fail">Ambos textos no coinciden!</string>
+</resources>

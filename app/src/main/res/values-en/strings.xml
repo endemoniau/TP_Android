@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="txt_first">Type first text</string>
+    <string name="txt_second">Type second text</string>
+    <string name="btn_cmp">Compare</string>
+    <string name="txt_result_ok">Both texts match!</string>
+    <string name="txt_result_fail">Both texts doesn\'t match!</string>
+</resources>

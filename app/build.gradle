@@ -1,0 +1,70 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'jacoco'
+}
+
+jacoco {
+    toolVersion = "0.8.10"
+}
+
+tasks.withType(Test.class).configureEach {
+    jacoco {
+        excludes = ["*"]
+    }
+}
+
+android {
+    namespace 'com.curso.android.tpandroid'
+    compileSdk 33
+
+    buildFeatures {
+        viewBinding = true
+    }
+    defaultConfig {
+        applicationId "com.curso.android.tpandroid"
+        minSdk 21
+        targetSdk 31
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            testCoverageEnabled true
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+
+    }
+}
+
+dependencies {
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.6.1")
+    implementation 'androidx.fragment:fragment-ktx:1.6.0'
+    implementation 'androidx.activity:activity-ktx:1.7.2'
+    implementation 'androidx.core:core-ktx:1.10.1'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.test.ext:junit-ktx:1.1.5'
+    implementation 'org.jetbrains.kotlin:kotlin-test:1.9.0'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test-jvm:1.6.4'
+    // https://mvnrepository.com/artifact/androidx.test.espresso/espresso-core
+    implementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    testImplementation "androidx.arch.core:core-testing:2.2.0"
+}
+
